@@ -1,6 +1,6 @@
 package entity;
 
-public class Funcionário {
+public class Funcionario {
     private String nome;
     private String cpf;
     private Double salarioBase;
@@ -10,10 +10,10 @@ public class Funcionário {
     private int feriasDias;
 
     //Construtor Vazio
-    public Funcionário() {}
+    public Funcionario() {}
 
     // Construtor
-    public Funcionário(String nome, int feriasDias, Boolean ferias, String genero, Double salarioBase, String cpf, String registro) {
+    public Funcionario(String nome, int feriasDias, Boolean ferias, String genero, Double salarioBase, String cpf, String registro) {
         this.nome = nome;
         this.feriasDias = feriasDias;
         this.ferias = ferias;
