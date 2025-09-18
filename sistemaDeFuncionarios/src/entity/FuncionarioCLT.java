@@ -9,12 +9,21 @@ public class FuncionarioCLT extends Funcionario {
     public FuncionarioCLT() {}
 
     //Constutor
-    
+    public FuncionarioCLT(String nome, int feriasDias, Boolean ferias, String genero, Double salarioBase, String cpf, String registro, 
+    Double valeTransporte, Double valeAlimentacao, Boolean planoDeSaude) {
 
-    //Métodos getters e setters
+    super(nome, feriasDias, ferias, genero, salarioBase, cpf, registro );
+    this.ValeTransporte = valeTransporte;
+    this.ValeAlimentacao = valeAlimentacao;
+    this.PlanoDeSaude = planoDeSaude;
+
+    }
+
+    //getters e setters
     public Double getValeTransporte() {
         return ValeTransporte;
     }
+
     public void setValeTransporte(Double valeTransporte) {
         ValeTransporte = valeTransporte;
     }
@@ -30,5 +39,6 @@ public class FuncionarioCLT extends Funcionario {
     public void setPlanoDeSaude(Boolean planoDeSaude) {
         PlanoDeSaude = planoDeSaude;
     }
+
 
 }
