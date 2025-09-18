@@ -12,7 +12,7 @@ public class Funcionario {
     //Construtor Vazio
     public Funcionario() {}
 
-    // Construtor
+    // Construtor Parametrizado
     public Funcionario(String nome, int feriasDias, Boolean ferias, String genero, Double salarioBase, String cpf, String registro) {
         this.nome = nome;
         this.feriasDias = feriasDias;
@@ -23,6 +23,7 @@ public class Funcionario {
         this.registro = registro;
     }
 
+    // Getters e Setters
     public String getNome() {
         return nome;
     }
@@ -83,17 +84,29 @@ public class Funcionario {
     // Método Listar Dados
     @Override
     public String toString() {
-        return "Funcionario [nome=" + nome + ", cpf=" + cpf + ", salarioBase=" + salarioBase + ", registro=" + registro
-                + ", genero=" + genero + ", ferias=" + ferias + ", feriasDias=" + feriasDias + "]";
+        return "Nome =" + nome + ", CPF =" + cpf + ", salário Base =" + salarioBase + ", registro =" + registro
+                + ", gênero =" + genero + ", férias=" + ferias + ", Dias de Férias=" + feriasDias;
     }
 
-    public Double calcularSalarioLiquido() {
-        return this.salarioBase;
+    // Método de calcular o salário liquído
+    public Double calcularSalarioLiquido(Double salarioBase) {
+        return salarioBase;
     }
 
-   
+    // Atualiza o salario 
+    public void atualizaSalario(Double valor) {
+        setSalarioBase(valor);
+        System.out.println("Seu novo salário é de: " + getSalarioBase());
+    }
 
- 
-
+    // Atualiza as Férias do Funcionário
+    public void atualizarFerias(int dias, boolean estado) {
+        setFeriasDias(dias);
+        if(estado == true) {
+            System.out.println("O Funcionário está de férias por: " + getFeriasDias());
+        } else {
+            System.out.println("O Funcionário não está de férias.");
+        }
+    }
 
 }
