@@ -10,7 +10,9 @@ public class Gerente extends FuncionarioCLT {
     }
 
     //Construtor
-    public Gerente(String departamento, int quantidadeDeSubordinados, boolean salaPropria) {
+    public Gerente(String nome, int feriasDias, Boolean ferias, String genero, Double salarioBase, String cpf, String registro, 
+    Double valeTransporte, Double valeAlimentacao, Boolean planoDeSaude, String departamento, int quantidadeDeSubordinados, boolean salaPropria) {
+        super(nome, feriasDias, ferias, genero, salarioBase, cpf, registro, valeTransporte, valeAlimentacao, planoDeSaude);
         this.departamento = departamento;
         this.quantidadeDeSubordinados = quantidadeDeSubordinados;
         this.salaPropria = salaPropria;
@@ -40,10 +42,34 @@ public class Gerente extends FuncionarioCLT {
         this.salaPropria = salaPropria;
     }
 
-    
+    //Métodos
+    public double calcularSalarioLiquido() {
+        double salario = getSalarioBase();
+        double bonus = salario * 0.15;
+        double descontos = salario * 0.15; // INSS + IRRF
+        return salario + bonus - descontos;
+    }
 
-    
 
-    
+    @Override
+    public String toString() {
+        return "Gerente [departamento=" + departamento + ", quantidadeDeSubordinados=" + quantidadeDeSubordinados
+                + ", salaPropria=" + salaPropria + "]";
+    }
 
+    public void atualizarSalario(double valor) {
+        setSalarioBase(valor); // herdado de Funcionario
+        System.out.println("Salário atualizado para: " + valor);
+    }
+
+    // 4. Atualizar férias
+    public void atualizarFerias(int valor, String estado) {
+        System.out.println("Férias atualizadas: " + valor + " dias - Estado: " + estado);
+    }
 }
+    
+
+    
+    
+
+
