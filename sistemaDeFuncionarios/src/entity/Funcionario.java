@@ -80,4 +80,20 @@ public class Funcionario {
     }
 
 
+    // Método Listar Dados
+    @Override
+    public String toString() {
+        return "Funcionario [nome=" + nome + ", cpf=" + cpf + ", salarioBase=" + salarioBase + ", registro=" + registro
+                + ", genero=" + genero + ", ferias=" + ferias + ", feriasDias=" + feriasDias + "]";
+    }
+
+    public Double calcularSalarioLiquido() {
+        return this.salarioBase;
+    }
+
+   
+
+ 
+
+
 }
