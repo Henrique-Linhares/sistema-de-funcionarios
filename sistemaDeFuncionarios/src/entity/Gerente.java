@@ -50,22 +50,12 @@ public class Gerente extends FuncionarioCLT {
         return salario + bonus - descontos;
     }
 
-
     @Override
     public String toString() {
         return "Gerente [departamento=" + departamento + ", quantidadeDeSubordinados=" + quantidadeDeSubordinados
                 + ", salaPropria=" + salaPropria + "]";
     }
 
-    public void atualizarSalario(double valor) {
-        setSalarioBase(valor); // herdado de Funcionario
-        System.out.println("Salário atualizado para: " + valor);
-    }
-
-    // 4. Atualizar férias
-    public void atualizarFerias(int valor, String estado) {
-        System.out.println("Férias atualizadas: " + valor + " dias - Estado: " + estado);
-    }
 }
     
 
