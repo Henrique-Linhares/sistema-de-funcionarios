@@ -1,3 +1,4 @@
+package entity;
 
 public class Diretor extends Gerente{
     private Double participacaoDosLucros;
@@ -9,7 +10,10 @@ public class Diretor extends Gerente{
     }
 
     //Construtor Completo
-    public Diretor(Double participacaoDosLucros, Boolean notebook, Boolean socio) {
+    public Diretor(String nome, int feriasDias, Boolean ferias, String genero, Double salarioBase, String cpf, String registro, 
+    Double valeTransporte, Double valeAlimentacao, Boolean planoDeSaude, String departamento, int quantidadeDeSubordinados, boolean salaPropria,
+    Double participacaoDosLucros, Boolean notebook, Boolean socio) {
+        super(nome, feriasDias, ferias, genero, salarioBase, cpf, registro, valeTransporte, valeAlimentacao, planoDeSaude, departamento, quantidadeDeSubordinados, salaPropria);
         this.participacaoDosLucros = participacaoDosLucros;
         this.notebook = notebook;
         this.socio = socio;
@@ -35,4 +39,17 @@ public class Diretor extends Gerente{
         this.socio = socio;
     }
 
+    //Metodos
+    @Override
+    public final double calcularSalarioLiquido(){
+        return (getSalarioBase() + 2000 + (getSalarioBase() * 0.25) + getValeAlimentacao() + getValeTransporte()) * 0.85;
+    }
+
+    @Override
+    public String toString() {
+        return "Diretor [participacaoDosLucros=" + participacaoDosLucros + ", notebook=" + notebook + ", socio=" + socio
+                + "]";
+    }
+
+    
 }
