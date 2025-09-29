@@ -45,11 +45,14 @@ public class Diretor extends Gerente{
         return (getSalarioBase() + 2000 + (getSalarioBase() * 0.25) + getValeAlimentacao() + getValeTransporte()) * 0.85;
     }
 
-    @Override
-    public String toString() {
-        return "Diretor [participacaoDosLucros=" + participacaoDosLucros + ", notebook=" + notebook + ", socio=" + socio
-                + "]";
-    }
+   @Override
+public String toString() {
+    return super.toString() + 
+           "\n| Tipo: Diretor" +
+           "\n| Participação nos Lucros: R$ " +  participacaoDosLucros + 
+           "\n| Notebook Corporativo: " + (notebook ? "Sim" : "Não") + 
+           "\n| Sócio da Empresa: " + (socio ? "Sim" : "Não");
+}
 
     
 }

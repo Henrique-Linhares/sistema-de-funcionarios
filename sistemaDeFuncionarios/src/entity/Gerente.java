@@ -50,10 +50,13 @@ public class Gerente extends FuncionarioCLT {
         return salario + bonus - descontos;
     }
 
-    @Override
     public String toString() {
-        return "Gerente [departamento=" + departamento + ", quantidadeDeSubordinados=" + quantidadeDeSubordinados
-                + ", salaPropria=" + salaPropria + "]";
+        return super.toString() + 
+               // 2. Adiciona os atributos específicos do Gerente
+               "\n| Cargo: Gerente" +
+               "\n| Departamento: " + departamento + 
+               "\n| Quantidade de Subordinados: " + quantidadeDeSubordinados +
+               "\n| Sala Própria: " + (salaPropria ? "Sim" : "Não");
     }
 
 }

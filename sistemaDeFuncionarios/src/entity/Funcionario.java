@@ -82,11 +82,15 @@ public class Funcionario {
 
 
     // Método Listar Dados
-    @Override
-    public String toString() {
-        return "Nome =" + nome + ", CPF =" + cpf + ", salário Base =" + salarioBase + ", registro =" + registro
-                + ", gênero =" + genero + ", férias=" + ferias + ", Dias de Férias=" + feriasDias;
-    }
+   public String toString() {
+    return "| Nome: " + nome + 
+           "\n| CPF: " + cpf + 
+           "\n| Registro: " + registro +
+           "\n| Salário Base: R$ " + salarioBase + 
+           "\n| Gênero: " + genero + 
+           "\n| Férias: " + (ferias ? "Sim" : "Não") + 
+           "\n| Dias de Férias: " + feriasDias;
+}
 
     // Método de calcular o salário liquído
     public Double calcularSalarioLiquido(Double salarioBase) {
