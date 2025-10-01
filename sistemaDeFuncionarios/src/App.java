@@ -13,6 +13,7 @@ public class App {
             System.out.println("1 - Criar Funcionário");
             System.out.println("2 - Listar Funcionários");
             System.out.println("3 - Promover Funcionário");
+            System.out.println("4 - Excluir um Funcionário");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
             opcao = scan.nextInt();
@@ -27,6 +28,9 @@ public class App {
                     break;
                 case 3:
                     promoverFuncionario();
+                    break;
+                case 4:
+                    excluirFuncionario();
                     break;
                 case 0:
                     System.out.println("Saindo...");
@@ -179,7 +183,7 @@ public class App {
             }
 
             // Coleta dados específicos de Diretor
-            double pl = 2000.0; // PL é fixo
+            double pl = 2000.0; 
             System.out.print("Possui notebook? (true/false): ");
             boolean nb = scan.nextBoolean();
             scan.nextLine();
@@ -210,6 +214,28 @@ public class App {
 
         } catch (Exception e) {
             System.out.println("Ocorreu um erro na promoção.");
+        }
+    }
+
+
+    // Método para excluir um funcionário
+    public static void excluirFuncionario() {
+        try {
+            // Verifica se o ArrayList esta vazio
+            if (funcionarios.isEmpty()) {
+                System.out.println("Nenhum funcionário foi cadastrado.");
+            } else {
+                // Exibe a lista de funcionários
+                listarFuncionarios();
+                System.out.println("Escolha um funcionário para excluir:");
+                int posicaoFuncionario = scan.nextInt();
+                int indice = posicaoFuncionario - 1; 
+                funcionarios.remove(indice);
+                System.out.println("Funcionário removido com sucesso!");
+            }
+
+        } catch(Exception e) {
+            System.out.println("Erro! Tente Novamente!");
         }
     }
 }
