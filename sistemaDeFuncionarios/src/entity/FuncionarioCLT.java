@@ -39,9 +39,9 @@ public class FuncionarioCLT extends Funcionario {
     @Override
     public String toString() {
         return super.toString() + 
-               ", Vale Transporte=" + valeTransporte + 
-               ", Vale Alimentação=" + valeAlimentacao + 
-               ", Plano de Saúde=" + (planoDeSaude ? "Ativo" : "Inativo");
+               ",\nVale Transporte=" + valeTransporte + 
+               ",\nVale Alimentação=" + valeAlimentacao + 
+               ", \nPlano de Saúde=" + (planoDeSaude ? "Ativo" : "Inativo");
     }
 
     // Sobrescrevendo atualizarSalario
